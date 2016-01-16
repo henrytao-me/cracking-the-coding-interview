@@ -11,7 +11,18 @@ import static org.junit.Assert.assertThat;
 public class Q01_01_Test {
 
     @Test
-    public void test() throws Exception {
-        assertThat(true, equalTo(true));
+    public void testIsUniqueLetter() throws Exception {
+
+        assertThat(Q01_01.isUniqueLetter("abcxyz"), equalTo(true));
+        assertThat(Q01_01.isUniqueLetter("aabcde"), equalTo(false));
+        assertThat(Q01_01.isUniqueLetter("XYZ"), equalTo(true));
+        assertThat(Q01_01.isUniqueLetter("#abYx*"), equalTo(true));
+        assertThat(Q01_01.isUniqueLetter("Ȃabc"), equalTo(false));
+    }
+
+    @Test
+    public void testIsUnique() throws Exception {
+        assertThat(Q01_01.isUnique("Ȃabc"), equalTo(true));
+        assertThat(Q01_01.isUnique("ȂȂabc"), equalTo(false));
     }
 }
